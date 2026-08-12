@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Acumetis Sustainability in Action onboarding module.">
   <title>Sustainability in Action | Acumetis</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260812-1">
 </head>
 <body>
 <main id="top">
@@ -67,18 +67,18 @@
     <div class="container">
       <p class="eyebrow">Waste Reduction</p>
       <h2>The most sustainable waste is the waste that is never created.</h2>
-      <p class="lead">Select each of the 5 R’s to reveal what it means.</p>
-      <div class="r-grid">
-        <button class="r-card" type="button" data-detail="Refuse what you don’t need."><span class="r-letter">R</span><span class="r-title">Refuse</span></button>
-        <button class="r-card" type="button" data-detail="Reduce what you use."><span class="r-letter">R</span><span class="r-title">Reduce</span></button>
-        <button class="r-card" type="button" data-detail="Reuse whenever possible."><span class="r-letter">R</span><span class="r-title">Reuse</span></button>
-        <button class="r-card" type="button" data-detail="Repurpose before disposing."><span class="r-letter">R</span><span class="r-title">Repurpose</span></button>
-        <button class="r-card" type="button" data-detail="Recycle correctly according to local office guidance."><span class="r-letter">R</span><span class="r-title">Recycle</span></button>
+      <p class="lead">Explore the 5 R’s in order—prioritizing prevention before recycling.</p>
+      <div class="r-selector" role="group" aria-label="The 5 Rs of waste reduction">
+        <button class="r-card" type="button" data-detail="Refuse what you don’t need." aria-pressed="false"><span class="r-number">1</span><span class="r-title">Refuse</span></button>
+        <button class="r-card" type="button" data-detail="Reduce what you use." aria-pressed="false"><span class="r-number">2</span><span class="r-title">Reduce</span></button>
+        <button class="r-card" type="button" data-detail="Reuse whenever possible." aria-pressed="false"><span class="r-number">3</span><span class="r-title">Reuse</span></button>
+        <button class="r-card" type="button" data-detail="Repurpose before disposing." aria-pressed="false"><span class="r-number">4</span><span class="r-title">Repurpose</span></button>
+        <button class="r-card" type="button" data-detail="Recycle correctly according to local office guidance." aria-pressed="false"><span class="r-number">5</span><span class="r-title">Recycle</span></button>
       </div>
-      <div class="r-detail" id="rDetail" aria-live="polite">Select an R to explore it.</div>
+      <div class="r-detail" id="rDetail" aria-live="polite">Select a step to see what it means.</div>
       <div class="simple-actions">
         <h3>Simple ways to help</h3>
-        <ul>
+        <ul class="simple-action-list">
           <li>Bring reusable bottles, mugs, and containers.</li>
           <li>Print only when necessary.</li>
           <li>Avoid single-use items.</li>
@@ -138,6 +138,6 @@
     </div>
   </section>
 </main>
-<script src="app.js"></script>
+<script src="app.js?v=20260812-1"></script>
 </body>
 </html>
