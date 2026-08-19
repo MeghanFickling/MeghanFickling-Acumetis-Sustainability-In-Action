@@ -2,8 +2,32 @@ const completed=new Set(),totalInteractions=4;
 const progressLabel=document.getElementById("progressLabel");
 const progressBar=document.getElementById("progressBar");
 function completeInteraction(name){completed.add(name);const count=completed.size;progressLabel.textContent=count+" of "+totalInteractions+" interactions completed";progressBar.style.width=(count/totalInteractions*100)+"%";}
-const decisionCards=document.querySelectorAll(".decision-card"),exploredDecisions=new Set();
-decisionCards.forEach((card,index)=>card.addEventListener("click",()=>{card.classList.add("explored");exploredDecisions.add(index);if(exploredDecisions.size===decisionCards.length)completeInteraction("decisions");}));
+
+const choiceData={
+  print:{icon:"🖨️",kicker:"Use less",title:"Print only when needed",why:"Printing uses paper, ink and energy and creates waste. Choosing digital options when practical reduces those impacts before they are created.",tip:"Preview documents first and share a digital copy when a printed version is not necessary."},
+  reuse:{icon:"📓",kicker:"Extend its life",title:"Use what you already have",why:"Using supplies and equipment for longer avoids unnecessary purchases and the materials, manufacturing and transportation behind new products.",tip:"Before ordering something new, check whether your team or office already has something that will work."},
+  reusable:{icon:"💧",kicker:"Choose repeat use",title:"Choose reusable items",why:"Reusable bottles, mugs and containers prevent repeated single-use waste and reduce the need to continually replace disposable items.",tip:"Keep a reusable bottle or mug somewhere visible so it becomes the easy default."},
+  power:{icon:"🖥️",kicker:"Use energy intentionally",title:"Turn off unused equipment",why:"Monitors, lights and other equipment can continue using electricity when they are left on unnecessarily. Powering down helps lower energy use and associated emissions.",tip:"Before leaving a room or finishing for the day, take a quick look for equipment that can be switched off."}
+};
+const choiceTabs=document.querySelectorAll(".choice-tab");
+const choiceStage=document.getElementById("choiceStage");
+const choiceStageIcon=document.getElementById("choiceStageIcon");
+const choiceStageKicker=document.getElementById("choiceStageKicker");
+const choiceStageTitle=document.getElementById("choiceStageTitle");
+const choiceStageWhy=document.getElementById("choiceStageWhy");
+const choiceTip=document.getElementById("choiceTip");
+const choiceCount=document.getElementById("choiceCount");
+const exploredChoices=new Set();
+choiceTabs.forEach(tab=>tab.addEventListener("click",()=>{
+  const key=tab.dataset.choice,data=choiceData[key];
+  choiceTabs.forEach(item=>{item.classList.remove("active");item.setAttribute("aria-selected","false")});
+  tab.classList.add("active","explored");tab.setAttribute("aria-selected","true");
+  choiceStage.classList.remove("choice-stage-pop");void choiceStage.offsetWidth;choiceStage.classList.add("choice-stage-pop");
+  choiceStageIcon.textContent=data.icon;choiceStageKicker.textContent=data.kicker;choiceStageTitle.textContent=data.title;choiceStageWhy.textContent=data.why;choiceTip.innerHTML="<strong>Try this:</strong> "+data.tip;
+  exploredChoices.add(key);choiceCount.textContent=exploredChoices.size+" of "+choiceTabs.length+" explored";
+  if(exploredChoices.size===choiceTabs.length){choiceCount.textContent="All 4 explored ✓";completeInteraction("decisions");}
+}));
+
 const actionItems=document.querySelectorAll(".action-item"),exploredEnergy=new Set();
 actionItems.forEach((item,index)=>item.addEventListener("click",()=>{item.classList.add("explored");exploredEnergy.add(index);if(exploredEnergy.size===actionItems.length)completeInteraction("energy");}));
 const rCards=document.querySelectorAll(".r-card"),rDetail=document.getElementById("rDetail"),exploredRs=new Set();
