@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Acumetis Sustainability in Action onboarding module.">
   <title>Sustainability in Action | Acumetis</title>
-  <link rel="stylesheet" href="styles.css?v=20260819-2">
+  <link rel="stylesheet" href="styles.css?v=20260819-3">
 </head>
 <body>
 <main id="top">
   <div class="overall-progress" aria-live="polite">
     <div class="progress-inner">
-      <div class="progress-label" id="progressLabel">0 of 4 interactions completed</div>
+      <div class="progress-label" id="progressLabel">0 of 5 interactions completed</div>
       <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
     </div>
   </div>
@@ -147,16 +147,19 @@
     <div class="container">
       <p class="eyebrow">Sustainable Purchasing</p>
       <h2>Every purchase has an environmental footprint.</h2>
-      <p class="lead">Whether you’re ordering office supplies, event materials, or promotional items, thoughtful purchasing decisions can help reduce waste, conserve resources, and support responsible supply chains.</p>
-      <div class="purchase-panel">
-        <h3>Before you buy, ask yourself:</h3>
-        <div class="purchase-grid">
-          <button class="purchase-card" type="button"><span class="purchase-icon">✅</span>Purchase only what you need</button>
-          <button class="purchase-card" type="button"><span class="purchase-icon">🛠️</span>Choose quality products that are built to last</button>
-          <button class="purchase-card" type="button"><span class="purchase-icon">📦</span>Reduce packaging and avoid single-use items</button>
-          <button class="purchase-card" type="button"><span class="purchase-icon">🤝</span>Consider small businesses and diverse suppliers</button>
-          <button class="purchase-card wide" type="button"><span class="purchase-icon">🔁</span>Check whether something you already have can be reused before buying new</button>
+      <p class="purchase-intro">Before ordering office supplies, event materials, or promotional items, run through this quick check.</p>
+
+      <div class="purchase-check">
+        <div class="purchase-progress" aria-hidden="true"><div id="purchaseTrackFill"></div></div>
+        <div class="purchase-step-head">
+          <span class="purchase-step-number" id="purchaseNumber">01</span>
+          <span class="purchase-step-label" id="purchaseLabel">Reuse first</span>
         </div>
+        <h3 id="purchaseQuestion">Do we already have something that can meet this need?</h3>
+        <p class="purchase-helper" id="purchaseHelper">The best purchase is sometimes the one we do not need to make.</p>
+        <div class="purchase-options" id="purchaseOptions" aria-label="Purchasing decision options"></div>
+        <div class="purchase-feedback" id="purchaseFeedback" aria-live="polite">Choose the response that best fits the situation.</div>
+        <button class="purchase-next" id="purchaseNext" type="button" hidden>Next question →</button>
       </div>
     </div>
   </section>
@@ -189,6 +192,6 @@
     </div>
   </section>
 </main>
-<script src="app.js?v=20260819-2"></script>
+<script src="app.js?v=20260819-3"></script>
 </body>
 </html>
