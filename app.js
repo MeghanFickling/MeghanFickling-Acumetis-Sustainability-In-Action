@@ -28,8 +28,30 @@ choiceTabs.forEach(tab=>tab.addEventListener("click",()=>{
   if(exploredChoices.size===choiceTabs.length){choiceCount.textContent="All 4 explored ✓";completeInteraction("decisions");}
 }));
 
-const actionItems=document.querySelectorAll(".action-item"),exploredEnergy=new Set();
-actionItems.forEach((item,index)=>item.addEventListener("click",()=>{item.classList.add("explored");exploredEnergy.add(index);if(exploredEnergy.size===actionItems.length)completeInteraction("energy");}));
+const energyHabits=document.querySelectorAll(".energy-habit");
+const energyMeterFill=document.getElementById("energyMeterFill");
+const energyScore=document.getElementById("energyScore");
+const energyFeedback=document.getElementById("energyFeedback");
+const selectedEnergy=new Set();
+const energyMessages=[
+  "Start with one habit you can make part of your routine.",
+  "Good start. One consistent habit can reduce unnecessary energy use.",
+  "You’re building a more energy-conscious workday.",
+  "Almost there — small habits reinforce each other.",
+  "Energy-smart workday complete. Consistency is what turns these choices into impact."
+];
+energyHabits.forEach((habit,index)=>habit.addEventListener("click",()=>{
+  const selected=habit.getAttribute("aria-pressed")==="true";
+  habit.setAttribute("aria-pressed",String(!selected));
+  habit.classList.toggle("selected",!selected);
+  if(!selected)selectedEnergy.add(index);else selectedEnergy.delete(index);
+  const count=selectedEnergy.size;
+  energyMeterFill.style.width=(count/energyHabits.length*100)+"%";
+  energyScore.textContent=count+" of "+energyHabits.length+" habits selected";
+  energyFeedback.textContent=energyMessages[count];
+  if(count===energyHabits.length){energyScore.textContent="4 of 4 habits selected ✓";completeInteraction("energy");}
+}));
+
 const rCards=document.querySelectorAll(".r-card"),rDetail=document.getElementById("rDetail"),exploredRs=new Set();
 rCards.forEach((card,index)=>card.addEventListener("click",()=>{rCards.forEach(item=>{item.classList.remove("active");item.setAttribute("aria-pressed","false")});card.classList.add("active");card.setAttribute("aria-pressed","true");rDetail.textContent=card.dataset.detail;exploredRs.add(index);if(exploredRs.size===rCards.length)completeInteraction("waste");}));
 document.querySelectorAll(".purchase-card").forEach(card=>card.addEventListener("click",()=>card.classList.add("explored")));
