@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Acumetis Sustainability in Action onboarding module.">
   <title>Sustainability in Action | Acumetis</title>
-  <link rel="stylesheet" href="styles.css?v=20260819-5">
+  <link rel="stylesheet" href="styles.css?v=20260819-6">
 </head>
 <body>
 <main id="top">
@@ -17,11 +17,19 @@
   </div>
 
   <section class="hero compact-hero">
-    <div class="container">
-      <span class="hero-tag">Sustainability at Acumetis</span>
-      <h1>Sustainability in Action</h1>
-      <p class="hero-subtitle">Explore practical ways to reduce your environmental impact through everyday decisions.</p>
-      <a class="scroll-link" href="#explore">Begin exploring ↓</a>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-tag">Sustainability at Acumetis</span>
+        <h1>Sustainability in Action</h1>
+        <p class="hero-subtitle">Small choices shape our footprint. Explore four practical areas where everyday decisions can make a difference.</p>
+        <a class="scroll-link" href="#explore">Explore the actions ↓</a>
+      </div>
+      <div class="hero-path" aria-hidden="true">
+        <div><span>01</span><strong>Actions</strong></div>
+        <div><span>02</span><strong>Energy</strong></div>
+        <div><span>03</span><strong>Waste</strong></div>
+        <div><span>04</span><strong>Purchasing</strong></div>
+      </div>
     </div>
   </section>
 
@@ -30,24 +38,27 @@
       <div class="workspace-intro">
         <div>
           <p class="eyebrow">Put sustainability into practice</p>
-          <h2>Explore one topic at a time.</h2>
+          <h2>Choose a topic to explore.</h2>
         </div>
-        <p>Select a topic below. Your progress is saved as you explore each activity.</p>
+        <div class="workspace-cue"><span>↓</span><p>Work through each activity. Your progress is tracked above.</p></div>
       </div>
 
       <nav class="topic-nav" role="tablist" aria-label="Sustainability in action topics">
-        <button class="topic-tab active" type="button" role="tab" aria-selected="true" data-topic="actions"><span>01</span>Everyday actions</button>
-        <button class="topic-tab" type="button" role="tab" aria-selected="false" data-topic="energy"><span>02</span>Energy</button>
-        <button class="topic-tab" type="button" role="tab" aria-selected="false" data-topic="waste"><span>03</span>Waste</button>
-        <button class="topic-tab" type="button" role="tab" aria-selected="false" data-topic="purchasing"><span>04</span>Purchasing</button>
+        <button class="topic-tab active" type="button" role="tab" aria-selected="true" data-topic="actions"><span>01</span><strong>Everyday actions</strong><small>Daily choices</small></button>
+        <button class="topic-tab" type="button" role="tab" aria-selected="false" data-topic="energy"><span>02</span><strong>Energy</strong><small>Use less</small></button>
+        <button class="topic-tab" type="button" role="tab" aria-selected="false" data-topic="waste"><span>03</span><strong>Waste</strong><small>Prevent first</small></button>
+        <button class="topic-tab" type="button" role="tab" aria-selected="false" data-topic="purchasing"><span>04</span><strong>Purchasing</strong><small>Buy thoughtfully</small></button>
       </nav>
 
       <div class="topic-panels">
         <section class="topic-panel active" data-panel="actions">
-          <div class="panel-heading">
-            <p class="eyebrow">Small Actions. Big Impact.</p>
-            <h2>Everyday decisions shape our environmental impact.</h2>
-            <p>Sustainability is built through the choices we make throughout the workday.</p>
+          <div class="panel-focus">
+            <div class="panel-number">01</div>
+            <div class="panel-heading">
+              <p class="eyebrow">Small Actions. Big Impact.</p>
+              <h2>Everyday decisions shape our environmental impact.</h2>
+              <p>Sustainability is built through the choices we make throughout the workday.</p>
+            </div>
           </div>
           <div class="choice-explorer">
             <div class="choice-explorer-head">
@@ -73,10 +84,13 @@
         </section>
 
         <section class="topic-panel energy-panel" data-panel="energy" hidden>
-          <div class="panel-heading light-heading">
-            <p class="eyebrow light">Energy Efficiency</p>
-            <h2>Build an energy-smart workday.</h2>
-            <p>Switch on the habits you can put into practice.</p>
+          <div class="panel-focus light-focus">
+            <div class="panel-number">02</div>
+            <div class="panel-heading light-heading">
+              <p class="eyebrow light">Energy Efficiency</p>
+              <h2>Build an energy-smart workday.</h2>
+              <p>Switch on the habits you can put into practice.</p>
+            </div>
           </div>
           <div class="energy-challenge">
             <div class="energy-habits" role="group" aria-label="Energy-saving habits">
@@ -96,10 +110,13 @@
         </section>
 
         <section class="topic-panel" data-panel="waste" hidden>
-          <div class="panel-heading">
-            <p class="eyebrow">Waste Reduction</p>
-            <h2>The most sustainable waste is the waste never created.</h2>
-            <p>Explore the 5 R’s in order—prioritizing prevention before recycling.</p>
+          <div class="panel-focus">
+            <div class="panel-number">03</div>
+            <div class="panel-heading">
+              <p class="eyebrow">Waste Reduction</p>
+              <h2>The most sustainable waste is the waste never created.</h2>
+              <p>Explore the 5 R’s in order—prioritizing prevention before recycling.</p>
+            </div>
           </div>
           <div class="r-selector" role="group" aria-label="The 5 Rs of waste reduction">
             <button class="r-card" data-detail="Refuse what you don’t need."><span class="r-number">1</span><span class="r-title">Refuse</span></button>
@@ -116,10 +133,13 @@
         </section>
 
         <section class="topic-panel" data-panel="purchasing" hidden>
-          <div class="panel-heading">
-            <p class="eyebrow">Sustainable Purchasing</p>
-            <h2>Every purchase has an environmental footprint.</h2>
-            <p>Thoughtful purchasing can reduce waste, conserve resources, and support responsible supply chains.</p>
+          <div class="panel-focus">
+            <div class="panel-number">04</div>
+            <div class="panel-heading">
+              <p class="eyebrow">Sustainable Purchasing</p>
+              <h2>Every purchase has an environmental footprint.</h2>
+              <p>Thoughtful purchasing can reduce waste, conserve resources, and support responsible supply chains.</p>
+            </div>
           </div>
           <div class="purchase-strip">
             <div class="purchase-strip-head"><div><h3>Before you buy</h3><p>Select each principle to learn more.</p></div><span id="purchaseCount">0 of 5 explored</span></div>
@@ -137,15 +157,51 @@
     </div>
   </section>
 
-  <section class="impact-section compact-impact" id="impact">
-    <div class="container impact-layout">
-      <div><p class="eyebrow light">Your Impact Matters</p><h2>Small choices add up.</h2><p>Every employee can help reduce our impact through thoughtful everyday decisions.</p></div>
-      <div><div class="impact-choices"><button class="impact-choice">Reduce energy</button><button class="impact-choice">Choose reusable</button><button class="impact-choice">Purchase thoughtfully</button><button class="impact-choice">Join initiatives</button></div><div class="impact-message" id="impactMessage">Select each action to complete the module.</div></div>
+  <section class="impact-section visual-impact" id="impact">
+    <div class="container">
+      <div class="impact-heading">
+        <div><p class="eyebrow light">Your Impact Matters</p><h2>Different actions. One collective impact.</h2></div>
+        <p>Select each action and watch how individual choices come together.</p>
+      </div>
+      <div class="impact-flow">
+        <div class="impact-sources">
+          <button class="impact-choice" data-impact="energy"><span class="impact-source-icon">⚡</span><span><strong>Reduce energy</strong><small>Use resources intentionally</small></span></button>
+          <button class="impact-choice" data-impact="reuse"><span class="impact-source-icon">↻</span><span><strong>Choose reusable</strong><small>Prevent repeated waste</small></span></button>
+          <button class="impact-choice" data-impact="purchase"><span class="impact-source-icon">◆</span><span><strong>Purchase thoughtfully</strong><small>Choose lower-impact options</small></span></button>
+          <button class="impact-choice" data-impact="participate"><span class="impact-source-icon">◎</span><span><strong>Join initiatives</strong><small>Multiply our collective effort</small></span></button>
+        </div>
+        <div class="impact-connectors" aria-hidden="true">
+          <span class="impact-line" data-line="energy"></span>
+          <span class="impact-line" data-line="reuse"></span>
+          <span class="impact-line" data-line="purchase"></span>
+          <span class="impact-line" data-line="participate"></span>
+        </div>
+        <div class="impact-result">
+          <div class="impact-orb" id="impactOrb" style="--impact-progress:0%">
+            <div class="orb-ring"></div>
+            <div class="orb-core"><span id="impactOrbCount">0</span><small>of 4</small></div>
+            <span class="orb-token token-energy">⚡</span>
+            <span class="orb-token token-reuse">↻</span>
+            <span class="orb-token token-purchase">◆</span>
+            <span class="orb-token token-participate">◎</span>
+          </div>
+          <div class="impact-result-copy">
+            <strong id="impactResultTitle">Build the impact</strong>
+            <p id="impactMessage">Select an action to begin.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="next-section compact-next"><div class="container next-layout"><div><p class="eyebrow light">Next Up</p><h2>Find additional guidance.</h2></div><p>Explore Acumetis’ sustainability policies and resources in the next module.</p><a class="next-link" href="#top">Back to top ↑</a></div></section>
+  <section class="next-section compact-next">
+    <div class="container next-layout">
+      <div><p class="eyebrow light">Next Up</p><h2>Find additional guidance.</h2></div>
+      <p>Explore Acumetis’ sustainability policies and resources in the next module.</p>
+      <a class="next-link" href="#top">Back to top ↑</a>
+    </div>
+  </section>
 </main>
-<script src="app.js?v=20260819-5"></script>
+<script src="app.js?v=20260819-6"></script>
 </body>
 </html>
