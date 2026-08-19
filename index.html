@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Acumetis Sustainability in Action onboarding module.">
   <title>Sustainability in Action | Acumetis</title>
-  <link rel="stylesheet" href="styles.css?v=20260819-1">
+  <link rel="stylesheet" href="styles.css?v=20260819-2">
 </head>
 <body>
 <main id="top">
@@ -78,18 +78,38 @@
     <div class="container">
       <p class="eyebrow light">Energy Efficiency</p>
       <h2>Reducing energy use is one of the simplest ways to lower our footprint.</h2>
-      <div class="two-column">
-        <div><p>You can help by making a few thoughtful choices throughout the day.</p></div>
-        <div class="action-list">
-          <button class="action-item" type="button">Turning off lights, monitors, and equipment when they’re not in use</button>
-          <button class="action-item" type="button">Taking advantage of natural lighting whenever possible</button>
-          <button class="action-item" type="button">Deleting unnecessary emails and unsubscribing from unwanted mailing lists</button>
-          <button class="action-item" type="button">Following our Energy Efficiency SOP for additional guidance</button>
+      <p class="energy-intro">Build an energy-smart workday by switching on the habits you can put into practice.</p>
+
+      <div class="energy-challenge">
+        <div class="energy-habits" role="group" aria-label="Energy-saving habits">
+          <button class="energy-habit" type="button" aria-pressed="false">
+            <span class="habit-marker" aria-hidden="true"></span>
+            <span><strong>Power down</strong><small>Turn off lights, monitors, and equipment when they’re not in use.</small></span>
+          </button>
+          <button class="energy-habit" type="button" aria-pressed="false">
+            <span class="habit-marker" aria-hidden="true"></span>
+            <span><strong>Use daylight</strong><small>Take advantage of natural lighting whenever possible.</small></span>
+          </button>
+          <button class="energy-habit" type="button" aria-pressed="false">
+            <span class="habit-marker" aria-hidden="true"></span>
+            <span><strong>Reduce digital clutter</strong><small>Delete unnecessary emails and unsubscribe from unwanted mailing lists.</small></span>
+          </button>
+          <button class="energy-habit" type="button" aria-pressed="false">
+            <span class="habit-marker" aria-hidden="true"></span>
+            <span><strong>Follow the guidance</strong><small>Use our Energy Efficiency SOP for additional actions and best practices.</small></span>
+          </button>
         </div>
-      </div>
-      <div class="fact-card">
-        <span class="fact-icon">💡</span>
-        <div><p class="eyebrow light">Did you know?</p><p>Lighting can account for up to 15% of a building’s electricity use. Turning off lights in unoccupied spaces is a simple way to reduce energy consumption.</p></div>
+
+        <aside class="energy-meter-panel">
+          <p class="meter-label">Your energy-smart workday</p>
+          <div class="energy-meter" aria-hidden="true"><div class="energy-meter-fill" id="energyMeterFill"></div></div>
+          <div class="energy-score" id="energyScore" aria-live="polite">0 of 4 habits selected</div>
+          <p class="energy-feedback" id="energyFeedback">Start with one habit you can make part of your routine.</p>
+          <div class="energy-fact">
+            <span class="fact-icon">💡</span>
+            <div><p class="eyebrow light">Did you know?</p><p>Lighting can account for up to 15% of a building’s electricity use. Turning off lights in unoccupied spaces is a simple way to reduce energy consumption.</p></div>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -169,6 +189,6 @@
     </div>
   </section>
 </main>
-<script src="app.js?v=20260819-1"></script>
+<script src="app.js?v=20260819-2"></script>
 </body>
 </html>
