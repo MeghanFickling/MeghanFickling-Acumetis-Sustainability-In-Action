@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Acumetis Sustainability in Action onboarding module.">
   <title>Sustainability in Action | Acumetis</title>
-  <link rel="stylesheet" href="styles.css?v=20260812-2">
+  <link rel="stylesheet" href="styles.css?v=20260819-1">
 </head>
 <body>
 <main id="top">
@@ -30,37 +30,46 @@
       <p class="eyebrow">Small Actions. Big Impact.</p>
       <h2>Everyday decisions shape our environmental impact.</h2>
       <p class="lead decision-intro">Sustainability is built through the choices we make throughout the workday. Small actions reduce resource use, prevent waste, and conserve energy—and their impact grows when we act together.</p>
-      <p class="decision-prompt">Select each card to explore the actions you can take.</p>
-      <div class="decision-grid">
-        <button class="decision-card" type="button">
-          <span class="decision-icon" aria-hidden="true">🖨️</span>
-          <span class="decision-content">
-            <span class="decision-title">Print only when needed</span>
-            <span class="decision-why"><strong>Why it helps:</strong> Reduces paper, ink, energy use, and waste.</span>
-          </span>
-        </button>
-        <button class="decision-card" type="button">
-          <span class="decision-icon" aria-hidden="true">📓</span>
-          <span class="decision-content">
-            <span class="decision-title">Use what you already have</span>
-            <span class="decision-why"><strong>Why it helps:</strong> Avoids unnecessary purchases and the resources used to make and ship new items.</span>
-          </span>
-        </button>
-        <button class="decision-card" type="button">
-          <span class="decision-icon" aria-hidden="true">💧</span>
-          <span class="decision-content">
-            <span class="decision-title">Choose reusable items</span>
-            <span class="decision-why"><strong>Why it helps:</strong> Prevents repeated single-use waste over time.</span>
-          </span>
-        </button>
-        <button class="decision-card" type="button">
-          <span class="decision-icon" aria-hidden="true">🖥️</span>
-          <span class="decision-content">
-            <span class="decision-title">Turn off unused equipment</span>
-            <span class="decision-why"><strong>Why it helps:</strong> Lowers electricity use and associated emissions.</span>
-          </span>
-        </button>
+
+      <div class="choice-explorer">
+        <div class="choice-explorer-head">
+          <div>
+            <p class="choice-label">Explore a workday choice</p>
+            <p class="choice-helper">Choose an action below to see the difference it can make.</p>
+          </div>
+          <div class="choice-count" id="choiceCount" aria-live="polite">0 of 4 explored</div>
+        </div>
+
+        <div class="choice-tabs" role="tablist" aria-label="Everyday sustainability actions">
+          <button class="choice-tab" type="button" role="tab" aria-selected="false" data-choice="print">
+            <span class="choice-tab-icon" aria-hidden="true">🖨️</span>
+            <span>Print less</span>
+          </button>
+          <button class="choice-tab" type="button" role="tab" aria-selected="false" data-choice="reuse">
+            <span class="choice-tab-icon" aria-hidden="true">📓</span>
+            <span>Use what you have</span>
+          </button>
+          <button class="choice-tab" type="button" role="tab" aria-selected="false" data-choice="reusable">
+            <span class="choice-tab-icon" aria-hidden="true">💧</span>
+            <span>Choose reusable</span>
+          </button>
+          <button class="choice-tab" type="button" role="tab" aria-selected="false" data-choice="power">
+            <span class="choice-tab-icon" aria-hidden="true">🖥️</span>
+            <span>Power down</span>
+          </button>
+        </div>
+
+        <div class="choice-stage" id="choiceStage" aria-live="polite">
+          <div class="choice-stage-icon" id="choiceStageIcon" aria-hidden="true">↳</div>
+          <div class="choice-stage-copy">
+            <p class="choice-stage-kicker" id="choiceStageKicker">Start here</p>
+            <h3 id="choiceStageTitle">Choose one of the actions above.</h3>
+            <p id="choiceStageWhy">You’ll see why it matters and one simple way to put it into practice during your workday.</p>
+            <div class="choice-tip" id="choiceTip"><strong>Try this:</strong> Pick the action that feels easiest to build into your routine first.</div>
+          </div>
+        </div>
       </div>
+
       <blockquote>“Small acts, when multiplied by millions of people, can transform the world.”<span>— Howard Zinn</span></blockquote>
     </div>
   </section>
@@ -160,6 +169,6 @@
     </div>
   </section>
 </main>
-<script src="app.js?v=20260812-2"></script>
+<script src="app.js?v=20260819-1"></script>
 </body>
 </html>
